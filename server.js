@@ -5,7 +5,12 @@ const cheerio = require("cheerio");
 const cors = require("cors");
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+  origin: "https://novel-frontend-sigma.vercel.app/",
+};
+
+app.use(cors(corsOptions));
 
 app.get("/chapter", async (req, res) => {
   try {
